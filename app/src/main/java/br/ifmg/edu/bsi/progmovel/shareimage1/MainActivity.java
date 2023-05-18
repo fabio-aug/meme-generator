@@ -60,7 +60,6 @@ public class MainActivity extends AppCompatActivity {
                         Intent intent = result.getData();
                         if (intent != null) {
                             String novaCor = intent.getStringExtra(NovaCorActivity.EXTRA_NOVA_COR);
-                            System.out.println(novaCor);
                             if (novaCor == null || novaCor.equals("")) {
                                 Toast.makeText(MainActivity.this, "Cor desconhecida. Usando preto no lugar.", Toast.LENGTH_SHORT).show();
                                 novaCor = "BLACK";

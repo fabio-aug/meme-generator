@@ -26,9 +26,9 @@ public class MemeCreator {
         this.corTexto = corTexto;
         this.fundo = fundo;
         this.displayMetrics = displayMetrics;
+        this.fontSize = fontSize;
         this.meme = criarImagem();
         this.dirty = false;
-        this.fontSize = fontSize;
     }
 
     public float getFontSize() {
@@ -96,7 +96,7 @@ public class MemeCreator {
 
         paint.setColor(corTexto);
         paint.setAntiAlias(true);
-        paint.setTextSize(this.fontSize);
+        paint.setTextSize(fontSize);
         paint.setTypeface(Typeface.create("sans-serif-condensed", Typeface.BOLD));
         paint.setTextAlign(Paint.Align.CENTER);
         // desenhar texto em cima
