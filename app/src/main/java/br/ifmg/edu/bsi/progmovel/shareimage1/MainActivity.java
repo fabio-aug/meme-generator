@@ -152,7 +152,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void compartilharImagem(Bitmap bitmap) {
-        // pegar a uri da mediastore
+        // pegar a uri da media store
         // pego o volume externo pq normalmente ele é maior que o volume interno.
         Uri contentUri;
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
@@ -161,13 +161,13 @@ public class MainActivity extends AppCompatActivity {
             contentUri = MediaStore.Images.Media.EXTERNAL_CONTENT_URI;
         }
 
-        // montar a nova imagem a ser inserida na mediastore
+        // montar a nova imagem a ser inserida na media store
         ContentValues values = new ContentValues();
         values.put(MediaStore.MediaColumns.DISPLAY_NAME, "shareimage1file");
         values.put(MediaStore.MediaColumns.MIME_TYPE, "image/jpeg");
         Uri imageUri = getContentResolver().insert(contentUri, values);
 
-        // criar a nova imagem na pasta da mediastore
+        // criar a nova imagem na pasta da media store
         try (
                 ParcelFileDescriptor pfd = getContentResolver().openFileDescriptor(imageUri, "w");
                 FileOutputStream fos = new FileOutputStream(pfd.getFileDescriptor())

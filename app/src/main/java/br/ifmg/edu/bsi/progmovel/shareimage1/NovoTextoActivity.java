@@ -58,7 +58,7 @@ public class NovoTextoActivity extends AppCompatActivity {
         fontSizeView.setText(fontSizeAtual);
     }
 
-    public void dencrementFont(View v) {
+    public void decrementFont(View v) {
         float currentFont = Float.parseFloat(fontSizeView.getText().toString());
         String fontSizeAtual = Float.toString(currentFont - 1);
         fontSizeView.setText(fontSizeAtual);

@@ -9,7 +9,6 @@ import android.util.DisplayMetrics;
 
 /**
  * Cria um meme com um texto e uma imagem de fundo.
- *
  * Você pode controlar o texto, a cor do texto e a imagem de fundo.
  */
 public class MemeCreator {
@@ -17,7 +16,7 @@ public class MemeCreator {
     private String texto2;
     private int corTexto;
     private Bitmap fundo;
-    private DisplayMetrics displayMetrics;
+    private final DisplayMetrics displayMetrics;
     private Bitmap meme;
     private float fontSize;
     private boolean dirty; // se true, significa que o meme precisa ser recriado.
