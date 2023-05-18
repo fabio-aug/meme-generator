@@ -6,15 +6,27 @@
     android:layout_height="match_parent"
     tools:context=".NovoTextoActivity">
 
+    <EditText
+        android:id="@+id/etTexto2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="60dp"
+        android:ems="10"
+        android:inputType="text"
+        android:text=""
+        app:layout_constraintEnd_toEndOf="@+id/textView"
+        app:layout_constraintStart_toStartOf="@+id/textView"
+        app:layout_constraintTop_toBottomOf="@+id/textView" />
+
     <TextView
         android:id="@+id/textView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="60dp"
-        android:text="@string/novo_texto"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:text="Texto Inferior"
+        app:layout_constraintEnd_toEndOf="@+id/etTexto2"
+        app:layout_constraintStart_toStartOf="@+id/etTexto2"
+        app:layout_constraintTop_toBottomOf="@+id/etTexto2" />
 
     <EditText
         android:id="@+id/etTexto"
@@ -36,8 +48,8 @@
         android:layout_marginTop="120dp"
         android:onClick="enviarNovoTexto"
         android:text="@string/salvar"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/textView2"
+        app:layout_constraintStart_toStartOf="@+id/textView2"
         app:layout_constraintTop_toBottomOf="@+id/font_size_view" />
 
     <TextView
@@ -81,5 +93,15 @@
         app:layout_constraintEnd_toEndOf="@+id/etTexto"
         app:layout_constraintStart_toStartOf="@+id/etTexto"
         app:layout_constraintTop_toBottomOf="@+id/etTexto" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="60dp"
+        android:text="Texto Superior"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

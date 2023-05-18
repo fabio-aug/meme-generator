@@ -14,6 +14,7 @@ import android.util.DisplayMetrics;
  */
 public class MemeCreator {
     private String texto;
+    private String texto2;
     private int corTexto;
     private Bitmap fundo;
     private DisplayMetrics displayMetrics;
@@ -21,8 +22,9 @@ public class MemeCreator {
     private float fontSize;
     private boolean dirty; // se true, significa que o meme precisa ser recriado.
 
-    public MemeCreator(String texto, int corTexto, Bitmap fundo, DisplayMetrics displayMetrics, float fontSize) {
+    public MemeCreator(String texto, String texto2, int corTexto, Bitmap fundo, DisplayMetrics displayMetrics, float fontSize) {
         this.texto = texto;
+        this.texto2 = texto2;
         this.corTexto = corTexto;
         this.fundo = fundo;
         this.displayMetrics = displayMetrics;
@@ -46,6 +48,15 @@ public class MemeCreator {
 
     public void setTexto(String texto) {
         this.texto = texto;
+        dirty = true;
+    }
+
+    public String getTexto2() {
+        return texto2;
+    }
+
+    public void setTexto2(String texto2) {
+        this.texto2 = texto2;
         dirty = true;
     }
 
@@ -77,6 +88,7 @@ public class MemeCreator {
         }
         return meme;
     }
+
     protected Bitmap criarImagem() {
         float heightFactor = (float) fundo.getHeight() / fundo.getWidth();
         int width = displayMetrics.widthPixels;
@@ -104,6 +116,7 @@ public class MemeCreator {
 
         // desenhar texto embaixo
         canvas.drawText(texto, (width / 2.f), (height * 0.9f), paint);
+        canvas.drawText(texto2, (width / 2.f), (height * 0.2f), paint);
         return bitmap;
     }
 }

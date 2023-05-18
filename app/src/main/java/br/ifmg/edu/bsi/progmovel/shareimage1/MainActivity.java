@@ -44,8 +44,10 @@ public class MainActivity extends AppCompatActivity {
                         Intent intent = result.getData();
                         if (intent != null) {
                             String novoTexto = intent.getStringExtra(NovoTextoActivity.EXTRA_NOVO_TEXTO);
+                            String novoTexto2 = intent.getStringExtra(NovoTextoActivity.EXTRA_NOVO_TEXTO_2);
                             float novaFonte = intent.getFloatExtra(NovoTextoActivity.EXTRA_FONTE_NOVA, 0);
                             memeCreator.setTexto(novoTexto);
+                            memeCreator.setTexto2(novoTexto2);
                             memeCreator.setFontSize(novaFonte);
                             mostrarImagem();
                         }
@@ -105,7 +107,7 @@ public class MainActivity extends AppCompatActivity {
 
         Bitmap imagemFundo = BitmapFactory.decodeResource(getResources(), R.drawable.fry_meme);
 
-        memeCreator = new MemeCreator("Olá Android!", Color.WHITE, imagemFundo, getResources().getDisplayMetrics(), 64.f);
+        memeCreator = new MemeCreator("Olá Android!", "", Color.WHITE, imagemFundo, getResources().getDisplayMetrics(), 64.f);
         mostrarImagem();
     }
 
@@ -113,6 +115,7 @@ public class MainActivity extends AppCompatActivity {
         Intent intent = new Intent(this, NovoTextoActivity.class);
         intent.putExtra(NovoTextoActivity.EXTRA_TEXTO_ATUAL, memeCreator.getTexto());
         intent.putExtra(NovoTextoActivity.EXTRA_FONTE_ATUAL, memeCreator.getFontSize());
+        intent.putExtra(NovoTextoActivity.EXTRA_TEXTO_ATUAL_2, memeCreator.getTexto2());
         startNovoTexto.launch(intent);
     }
 
